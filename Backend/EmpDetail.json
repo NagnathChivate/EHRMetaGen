@@ -1,0 +1,11 @@
+[
+  {
+    "emp": {
+      "Empno": "101",
+      "EmpName": "Nagnath",
+      "EmpDept": "Development",
+      "EmpEmail": "nagnath@gmail.com",
+      "EmpSalary": "900000"
+    }
+  }
+]
