@@ -1,0 +1,49 @@
+/* src/components/Navbar.css */
+
+:root {
+ --header-bg: #2E7D8C; 
+  --header-text: #ffffff;
+  --button-hover: #319795;
+}
+
+.app-navbar {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--header-text);
+}
+
+.app-navbar .nav-link {
+  color: var(--header-text);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.app-navbar .nav-link:hover {
+  color: var(--button-hover);
+ 
+}
+
+.logout-btn {
+  border-color: var(--header-text);
+  color: var(--header-text);
+  transition: background-color 0.3s ease;
+ 
+}
+
+.logout-btn:hover {
+  background-color: var(--button-hover);
+  border-color: var(--button-hover);
+  color: white;
+  border: #ffffff;
+  
+}

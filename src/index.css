@@ -1,8 +1,12 @@
+ 
+html,body{height: 100%;  font-family: 'Inter', sans-serif;background-color:#f7f7f7;}
+html,body,div,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,img,small,u,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,section,time, p,table,tr,td,th,tbody,.grid_table strong{
+  font-size: 14px;font-weight: normal;font-family: 'Inter', sans-serif;
+}
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+ font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
