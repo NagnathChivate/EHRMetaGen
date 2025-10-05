@@ -1,3 +1,4 @@
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./assets/CSS/font-family.css";
@@ -18,8 +19,10 @@ function Home() {
 function App() {
   return (
     <>
-      <AppNavbar />
-      <div className="container-fluid mt-1 p-0">
+    <div className="top_menu">
+        <AppNavbar />
+    </div>     
+      <div className="container-fluid p-0 sub_menu">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />

@@ -1,0 +1,40 @@
+/* Full height container */
+.ht_100 {
+   height: 100%;
+}
+
+/* Left Sidebar */
+.Leftsidebar {
+     width: 15%;
+    background-color:  rgb(38, 113, 206);
+    color: white;
+    float: left;
+    height: 100%;
+    overflow-y: scroll;
+     transition: all 0.4s ease; 
+}
+
+/* Sidebar text or links */
+.Leftsidebar a {
+ color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 8px;
+    transition: background 0.3s ease;
+    display: block;
+    font-weight: 600;
+}
+
+.Leftsidebar a:hover {
+  background-color: #0b5ed7;
+}
+
+/* Right Container */
+.Right_container {
+    position: relative;
+      background-color: #f8f9fa;
+    padding: 0px;
+    overflow-y: auto;
+    float: left;
+    width: 85%;
+    height: 100%;
+}
