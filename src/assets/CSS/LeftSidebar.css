@@ -5,19 +5,24 @@
   --sidebar-bg: #fafdff;
   --main-bg: #eaf7fb;
   --sidebar-card-bg: #fff;
-  --card-shadow: 0 8px 32px 0 rgba(13,110,253,0.08);
+  --card-shadow: 0 8px 32px 0 rgba(13, 110, 253, 0.08);
   --border-radius: 22px;
   --sidebar-width: 320px;
 }
 
-
-/* General font/flex layout */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+body,
+html {
+  background: var(--main-bg);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
 
 .ht_100,
 .Leftsidebar,
@@ -25,25 +30,15 @@
   font-family: var(--font-family);
 }
 
-
-body,
-html {
-  background: var(--main-bg);
-}
-
-
-/* Container and global structure */
 .ht_100 {
   min-height: 100vh;
   height: 100vh;
   display: flex;
   padding: 40px 0;
   background: var(--main-bg);
-  gap: 20px; /* reduced gap between sidebar and container */
+  gap: 20px;
 }
 
-
-/* Sidebar */
 .Leftsidebar {
   width: var(--sidebar-width);
   min-width: 220px;
@@ -59,12 +54,10 @@ html {
   background-color: #eaf7fb;
 }
 
-
 .Leftsidebar .nav-tabs {
   border-bottom: none;
   margin-bottom: 20px;
 }
-
 
 .Leftsidebar .nav-link,
 .Leftsidebar .btn-link {
@@ -82,7 +75,6 @@ html {
   box-shadow: none;
 }
 
-
 .Leftsidebar .nav-link.active,
 .Leftsidebar .btn-link.fw-bold {
   background: var(--primary-gradient);
@@ -91,22 +83,16 @@ html {
   border-radius: 14px;
 }
 
-
-/* Indented sub-menus */
 .Leftsidebar ul ul {
   margin-left: 15px;
   border-left: 3px solid #e3f4fe;
   padding-left: 10px;
 }
 
-
-/* Sub-menu style */
 .Leftsidebar .btn-link.text-secondary {
   color: #7ca5bb;
 }
 
-
-/* Section/custom labels */
 .Leftsidebar .section-label {
   font-size: 1.13rem;
   font-weight: 700;
@@ -114,34 +100,30 @@ html {
   margin: 24px 0 13px 0;
 }
 
-
 .Leftsidebar .nav-item {
   margin-bottom: 5px;
 }
 
-
-/* Scrollbar modern look */
 .Leftsidebar::-webkit-scrollbar {
   width: 10px;
   background: #e3f4fe;
   border-radius: 11px;
 }
+
 .Leftsidebar::-webkit-scrollbar-thumb {
   background: #aedeec;
   border-radius: 11px;
 }
 
-
-/* Main content (Right panel) design */
 .Right_container {
   flex: 1;
   min-width: 0;
-  margin-right: 20px; /* reduced */
-  margin-left: 0; /* aligned closer to sidebar */
+  margin-right: 20px;
+  margin-left: 0;
   background: var(--sidebar-card-bg);
-  border-radius: var(--border-radius);
+  /* border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
-  padding: 46px 60px 42px 48px;
+  padding: 46px 60px 42px 48px; */
   color: #142b47;
   display: flex;
   flex-direction: column;
@@ -149,8 +131,6 @@ html {
   overflow-y: auto;
 }
 
-
-/* Main headings and text */
 .Right_container h2 {
   font-size: 2.35rem;
   font-weight: 800;
@@ -159,6 +139,7 @@ html {
   margin-bottom: 22px;
   letter-spacing: 0.9px;
 }
+
 .Right_container p {
   font-size: 1.16rem;
   color: #4f6c87;
@@ -166,13 +147,11 @@ html {
   letter-spacing: 0.04rem;
 }
 
-
-/* Toggle button styling */
 .toggle-btn {
   position: absolute;
   top: 27px;
   right: 54px;
-  background: linear-gradient(90deg,#73c4fc 40%, #0d6efd 90%);
+  background: linear-gradient(90deg, #73c4fc 40%, #0d6efd 90%);
   color: #fff;
   border: none;
   border-radius: 99px;
@@ -181,57 +160,60 @@ html {
   padding: 10px 24px;
   cursor: pointer;
   z-index: 50;
-  transition: background .22s;
+  transition: background 0.22s ease-in-out;
 }
-
 
 .toggle-btn:hover {
-  background: linear-gradient(90deg,#23bcef 30%,#144C9A 92%);
+  background: linear-gradient(90deg, #23bcef 30%, #144C9A 92%);
 }
 
-
-/* Responsive design */
 @media (max-width: 1200px) {
   .ht_100 {
     padding: 18px 0;
     gap: 16px;
   }
+
   .Leftsidebar {
     margin-left: 4px;
     padding: 18px 7px 16px 12px;
   }
+
   .Right_container {
-    padding: 30px 8px 22px 12px;
-    margin-right: 8px;
+    margin-right: 20px;
     margin-left: 0;
   }
 }
+
 @media (max-width: 900px) {
   .ht_100 {
     flex-direction: column;
     padding: 8px 1px;
     gap: 7px;
   }
-  .Leftsidebar, .Right_container {
+
+  .Leftsidebar,
+  .Right_container {
     margin: 0;
     border-radius: 22px;
     width: 96vw;
     min-width: unset;
     max-width: unset;
   }
+
   .Right_container {
     padding: 18px 9px 18px 8px;
   }
 }
 
-
 @media (max-width: 600px) {
-  .Leftsidebar, .Right_container {
+  .Leftsidebar,
+  .Right_container {
     width: 100vw;
     padding-left: 2px;
     padding-right: 2px;
     border-radius: 12px;
   }
+
   .Right_container {
     margin-bottom: 20px;
   }
