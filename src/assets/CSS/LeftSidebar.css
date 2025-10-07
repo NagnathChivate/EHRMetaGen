@@ -10,6 +10,7 @@
   --sidebar-width: 320px;
 }
 
+
 /* General font/flex layout */
 *,
 *::before,
@@ -17,16 +18,19 @@
   box-sizing: border-box;
 }
 
+
 .ht_100,
 .Leftsidebar,
 .Right_container {
   font-family: var(--font-family);
 }
 
+
 body,
 html {
   background: var(--main-bg);
 }
+
 
 /* Container and global structure */
 .ht_100 {
@@ -35,8 +39,9 @@ html {
   display: flex;
   padding: 40px 0;
   background: var(--main-bg);
-  gap: 30px;
+  gap: 20px; /* reduced gap between sidebar and container */
 }
+
 
 /* Sidebar */
 .Leftsidebar {
@@ -54,10 +59,12 @@ html {
   background-color: #eaf7fb;
 }
 
+
 .Leftsidebar .nav-tabs {
   border-bottom: none;
   margin-bottom: 20px;
 }
+
 
 .Leftsidebar .nav-link,
 .Leftsidebar .btn-link {
@@ -75,6 +82,7 @@ html {
   box-shadow: none;
 }
 
+
 .Leftsidebar .nav-link.active,
 .Leftsidebar .btn-link.fw-bold {
   background: var(--primary-gradient);
@@ -83,6 +91,7 @@ html {
   border-radius: 14px;
 }
 
+
 /* Indented sub-menus */
 .Leftsidebar ul ul {
   margin-left: 15px;
@@ -90,10 +99,12 @@ html {
   padding-left: 10px;
 }
 
+
 /* Sub-menu style */
 .Leftsidebar .btn-link.text-secondary {
   color: #7ca5bb;
 }
+
 
 /* Section/custom labels */
 .Leftsidebar .section-label {
@@ -103,9 +114,11 @@ html {
   margin: 24px 0 13px 0;
 }
 
+
 .Leftsidebar .nav-item {
   margin-bottom: 5px;
 }
+
 
 /* Scrollbar modern look */
 .Leftsidebar::-webkit-scrollbar {
@@ -118,11 +131,13 @@ html {
   border-radius: 11px;
 }
 
+
 /* Main content (Right panel) design */
 .Right_container {
   flex: 1;
   min-width: 0;
-  margin-right: 48px;
+  margin-right: 20px; /* reduced */
+  margin-left: 0; /* aligned closer to sidebar */
   background: var(--sidebar-card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
@@ -133,6 +148,7 @@ html {
   position: relative;
   overflow-y: auto;
 }
+
 
 /* Main headings and text */
 .Right_container h2 {
@@ -149,6 +165,7 @@ html {
   margin-bottom: 28px;
   letter-spacing: 0.04rem;
 }
+
 
 /* Toggle button styling */
 .toggle-btn {
@@ -167,9 +184,11 @@ html {
   transition: background .22s;
 }
 
+
 .toggle-btn:hover {
   background: linear-gradient(90deg,#23bcef 30%,#144C9A 92%);
 }
+
 
 /* Responsive design */
 @media (max-width: 1200px) {
@@ -183,7 +202,8 @@ html {
   }
   .Right_container {
     padding: 30px 8px 22px 12px;
-    margin-right: 4px;
+    margin-right: 8px;
+    margin-left: 0;
   }
 }
 @media (max-width: 900px) {
@@ -203,6 +223,7 @@ html {
     padding: 18px 9px 18px 8px;
   }
 }
+
 
 @media (max-width: 600px) {
   .Leftsidebar, .Right_container {

@@ -1,9 +1,13 @@
 import "../assets/CSS/LeftSidebar.css";
+import React, { useState } from "react";
+
+// Sidebar Component
 import AdminSideLeft from "./Admin/AdminSideLeft";
+
+// Sub-pages
 import MasterPhysician from "./Admin/sub-pages/master_physician";
 import Scheduler from "./Admin/sub-pages/schedular";
 import UserSetup from "./Admin/sub-pages/user_setup";
-import React, { useState } from "react";
 
 export default function Admin() {
   const [isOpen, setIsOpen] = useState(true); // sidebar visible by default
@@ -14,19 +18,35 @@ export default function Admin() {
       {/* Left Sidebar */}
       {isOpen && (
         <section className="Leftsidebar">
-          <AdminSideLeft setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
+          <AdminSideLeft
+            setSelectedPage={setSelectedPage}
+            selectedPage={selectedPage}
+          />
         </section>
       )}
 
       {/* Right Container */}
-      <section className="Right_container flex-grow-1" style={{ width: isOpen ? "85%" : "100%" }}>
+      <section
+        className="Right_container flex-grow-1"
+        style={{ width: isOpen ? "85%" : "100%" }}
+      >
+        {/* Toggle Sidebar Button (optional, uncomment if needed) */}
+        {/* 
         <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (<><i className="bi bi-x-lg"></i></>) : (<><i className="bi bi-list"></i></>)}
+          {isOpen ? (
+            <i className="bi bi-x-lg"></i>
+          ) : (
+            <i className="bi bi-list"></i>
+          )}
         </button>
-        
+        */}
+
+        {/* Conditional Rendering of Subpages */}
         {selectedPage === "MasterPhysician" && <MasterPhysician />}
         {selectedPage === "Scheduler" && <Scheduler />}
         {selectedPage === "UserSetup" && <UserSetup />}
+
+        {/* Default Dashboard */}
         {!selectedPage && (
           <>
             <h2>Dashboard Content</h2>
