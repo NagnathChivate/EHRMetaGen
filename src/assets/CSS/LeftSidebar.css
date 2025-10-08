@@ -1,40 +1,158 @@
-/* Full height container */
-.ht_100 {
-   height: 100%;
-}
-
-/* Left Sidebar */
-.Leftsidebar {
-     width: 15%;
-    background-color:  rgb(38, 113, 206);
-    color: white;
-    float: left;
-    height: 100%;
-    overflow-y: scroll;
-     transition: all 0.4s ease; 
-}
-
-/* Sidebar text or links */
-.Leftsidebar a {
- color: #FFFFFF;
-    text-decoration: none;
-    padding: 10px 8px;
-    transition: background 0.3s ease;
-    display: block;
-    font-weight: 600;
-}
-
-.Leftsidebar a:hover {
-  background-color: #0b5ed7;
-}
-
-/* Right Container */
+.w100{width: 100%;}
+.ht_100,
+.Leftsidebar,
 .Right_container {
-    position: relative;
-      background-color: #f8f9fa;
-    padding: 0px;
-    overflow-y: auto;
-    float: left;
-    width: 85%;
-    height: 100%;
+  font-family: var(--font-family);
+}
+/* Container and global structure */
+.ht_100 {
+ height: 100%;
+    overflow: auto;
+}
+/* Sidebar */
+.Leftsidebar{
+    color: #121e3a;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+.Leftsidebar .maintab.nav-tabs {
+width: 100%;
+    display: inline-block;
+    margin: 0px;
+}
+.Leftsidebar .maintab .nav-item{
+      width: 50%;
+    float: left;   
+}
+
+.Leftsidebar .maintab .nav-link,
+.Leftsidebar .maintab .btn-link {
+   text-align: center;
+    width: 100%;
+}
+
+
+.Leftsidebar .nav-link.active,
+.Leftsidebar .btn-link.fw-bold {
+  background: var(--primary-gradient);
+  color: var(--primary-color);
+  box-shadow: 0 2px 22px rgba(13, 110, 253, 0.08);
+  border-radius: 14px;
+}
+
+
+/* Indented sub-menus */
+.Leftsidebar ul ul {
+  margin-left: 15px;
+  border-left: 3px solid #e3f4fe;
+  padding-left: 10px;
+}
+
+
+/* Sub-menu style */
+.Leftsidebar .btn-link.text-secondary {
+  color: #7ca5bb;
+}
+
+
+/* Section/custom labels */
+.Leftsidebar .section-label {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #14b7d9;
+  margin: 24px 0 13px 0;
+}
+
+/* Main content (Right panel) design */
+.Right_container {
+   width: 85%;border-left: 1px solid #1565c0 !important;
+}
+
+
+/* Main headings and text */
+.Right_container h2 {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #1565c0;
+  margin-top: 0;
+  margin-bottom: 22px;
+  letter-spacing: 0.9px;
+}
+.Right_container p {
+  font-size: 1.16rem;
+  color: #4f6c87;
+  margin-bottom: 28px;
+  letter-spacing: 0.04rem;
+}
+
+
+/* Toggle button styling */
+.toggle-btn {
+  position: absolute;
+  top: 27px;
+  right: 54px;
+  background: linear-gradient(90deg,#73c4fc 40%, #0d6efd 90%);
+  color: #fff;
+  border: none;
+  border-radius: 99px;
+  box-shadow: 0 2px 28px #0d6efd26;
+  font-size: 1.31rem;
+  padding: 10px 24px;
+  cursor: pointer;
+  z-index: 50;
+  transition: background .22s;
+}
+
+
+.toggle-btn:hover {
+  background: linear-gradient(90deg,#23bcef 30%,#144C9A 92%);
+}
+
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .ht_100 {
+    padding: 18px 0;
+    gap: 16px;
+  }
+  .Leftsidebar {
+    margin-left: 4px;
+    padding: 18px 7px 16px 12px;
+  }
+  .Right_container {
+    padding: 30px 8px 22px 12px;
+    margin-right: 8px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 900px) {
+  .ht_100 {
+    flex-direction: column;
+    padding: 8px 1px;
+    gap: 7px;
+  }
+  .Leftsidebar, .Right_container {
+    margin: 0;
+    border-radius: 22px;
+    width: 96vw;
+    min-width: unset;
+    max-width: unset;
+  }
+  .Right_container {
+    padding: 18px 9px 18px 8px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .Leftsidebar, .Right_container {
+    width: 100vw;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 12px;
+  }
+  .Right_container {
+    margin-bottom: 20px;
+  }
 }
