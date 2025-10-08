@@ -8,36 +8,35 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
   const [isOpen, setIsOpen] = useState(true); // ✅ added toggle state
 
   return (
-    <div>
-      {/* Tabs */}
-      <ul className="nav nav-tabs">
-        <li className="nav-item">
-          <button
-            className={`nav-link ${activeTab === "EHR" ? "active" : ""}`}
-            onClick={() => setActiveTab("EHR")}
-          >
-            EHR
-          </button>
-        </li>
-        <li className="nav-item">
-          <button
-            className={`nav-link ${activeTab === "Billing" ? "active" : ""}`}
-            onClick={() => setActiveTab("Billing")}
-          >
-            Billing
-          </button>
-        </li>
-      </ul>
-
-      {/* Tab Content */}
-      <div style={{ padding: "15px", border: "1px solid #dee2e6", borderTop: "none" }}>
-        {activeTab === "EHR" && 
-        <div>EHR Active</div>
-        }
-        {activeTab === "Billing" && 
-        <div>
-          Billing Active
-        </div>}
+    <div className="w100">
+      {/* Tabs Header with Toggle */}
+      <div className="w100">
+        <ul className="nav nav-tabs maintab Ullink">
+          <li className="nav-item">
+            <button
+              className={`nav-link ${activeTab === "EHR" ? "active" : ""}`}
+              onClick={() => {
+                setActiveTab("EHR");
+                setActiveSubTab("");
+                setSelectedPage("");
+              }}
+            >
+              EHR
+            </button>
+          </li>
+          <li className="nav-item">
+            <button
+              className={`nav-link ${activeTab === "Billing" ? "active" : ""}`}
+              onClick={() => {
+                setActiveTab("Billing");
+                setActiveSubTab("");
+                setSelectedPage("");
+              }}
+            >
+              Billing
+            </button>
+          </li>
+        </ul>        
       </div>
 
       {/* Conditional Sidebar Section */}
