@@ -10,7 +10,7 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
   return (
     <div className="w100">
       {/* Tabs Header with Toggle */}
-      <div className="w100">
+      <div className="w100 N">
         <ul className="nav nav-tabs maintab Ullink">
           <li className="nav-item">
             <button
