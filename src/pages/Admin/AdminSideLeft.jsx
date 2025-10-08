@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import BillingSection from "./BillingSection";
+
 
 export default function AdminSideLeft() {
   const [activeTab, setActiveTab] = useState("EHR"); // default active tab
@@ -28,7 +30,8 @@ export default function AdminSideLeft() {
       {/* Tab Content */}
       <div style={{ padding: "15px", border: "1px solid #dee2e6", borderTop: "none" }}>
         {activeTab === "EHR" && <div>EHR Active</div>}
-        {activeTab === "Billing" && <div>Billing Active</div>}
+        <BillingSection activeTab={activeTab} />
+
       </div>
     </div>
   );
