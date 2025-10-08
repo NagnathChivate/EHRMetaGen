@@ -1,0 +1,81 @@
+:root {
+  --uc-bg: #fafdff;
+  --uc-card: #fff;
+  --uc-accent: #14b7d9;
+  --uc-deep: #1565c0;
+  --uc-btn1: #0dbadf;
+  --uc-btn2: #51bdec;
+  --uc-shadow: 0 10px 36px rgb(13 110 253 / .11);
+  --uc-radius: 20px;
+  --font: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.setup-main {
+ background: var(--navbar-bg);
+    font-family: var(--font);
+    /* margin: 0 auto; */
+    /* padding: 52px 0; */
+    min-width: 340px;
+    max-width: 740px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.setup-navbar {
+  display: flex;
+  gap: 16px;
+  background: var(--navbar-bg);
+  box-shadow: var(--uc-shadow);
+  border-radius: 0;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px; /* same max-width as .setup-main */
+  border: none;
+  justify-content: center;
+  box-sizing: border-box; /* include padding/border in width */
+}
+
+
+.setup-nav-btn {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 1.01rem;
+  color: black; /* Default text color */
+  border-radius: 14px;
+  padding: 11px 29px;
+  transition: background 0.22s, color 0.17s;
+  cursor: pointer;
+}
+
+.setup-nav-btn.active,
+.setup-nav-btn:hover {
+  color: white; /* Active and hover text color */
+  background: linear-gradient(95deg, var(--uc-btn1) 60%, var(--uc-btn2));
+  box-shadow: 0 3px 14px #51bdec40;
+}
+
+.setup-content h2 {
+  font-size: 2rem;
+  color: var(--uc-deep);
+  font-weight: 800;
+}
+
+@media (max-width: 850px) {
+  .setup-content, .setup-main {
+    max-width: 99vw;
+  }
+  .setup-content {
+    width: 96vw;
+    min-width: auto;
+  }
+}
