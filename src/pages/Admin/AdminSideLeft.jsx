@@ -1,16 +1,17 @@
-import React, { useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../assets/CSS/AdminSideLeft.css";
+import React, { useState } from "react";
+
 export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
   const [activeTab, setActiveTab] = useState("EHR");
   const [activeSubTab, setActiveSubTab] = useState("");
   const [isOpen, setIsOpen] = useState(true); // ✅ added toggle state
 
   return (
-    <div style={{ minWidth: "250px" }}>
+    <div className="w100">
       {/* Tabs Header with Toggle */}
-      <div className="d-flex align-items-center justify-content-between mb-3">
-        <ul className="nav nav-tabs flex-grow-1 mb-0">
+      <div className="w100">
+        <ul className="nav nav-tabs maintab Ullink">
           <li className="nav-item">
             <button
               className={`nav-link ${activeTab === "EHR" ? "active" : ""}`}
@@ -35,29 +36,15 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
               Billing
             </button>
           </li>
-        </ul>
-
-        {/* Toggle Button beside tabs */}
-        <button className="toggle-btn-inline" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <i className="bi bi-x-lg"></i>
-          ) : (
-            <i className="bi bi-list"></i>
-          )}
-        </button>
+        </ul>        
       </div>
 
       {/* Conditional Sidebar Section */}
       {isOpen && (
-        <div
-          style={{
-            padding: "15px",
-            border: "1px solid #dee2e6",
-            borderTop: "none",
-            borderRadius: "0 0 10px 10px",
-          }}
-        >
-          {activeTab === "EHR" && <div>EHR Active</div>}
+        <div>
+          {activeTab === "EHR" && 
+              <div>EHR Active</div>
+          }
 
           {activeTab === "Billing" && (
             <div>
@@ -139,9 +126,9 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                 </li>
               </ul>
 
-              {activeSubTab === "BillingSetup" && (
+              {/* {activeSubTab === "BillingSetup" && (
                 <div className="mt-3">Billing Setup Content</div>
-              )}
+              )} */}
             </div>
           )}
         </div>

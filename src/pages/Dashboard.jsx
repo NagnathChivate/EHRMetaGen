@@ -3,8 +3,7 @@ import React from "react";
 export default function Dashboard() {
   return (
     <div>
-        Dahboard
-      
+        Dahboard      
     </div>
   )
 }

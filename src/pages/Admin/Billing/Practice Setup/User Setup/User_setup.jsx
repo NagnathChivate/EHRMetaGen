@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-// Adjust the path if your User_setup.css is elsewhere
-import '../../../assets/CSS/User_setup.css';
-
-// Import sub-page components
-import User from './user-setup-sub-pages/User';
-import UserGroup from './user-setup-sub-pages/UserGroup';
-import DocumentRight from './user-setup-sub-pages/DocumentRight';
-import PasswordRuleSetup from './user-setup-sub-pages/PasswordRuleSetup';
-import AddUser from './user-setup-sub-pages/AddUser';
+import "../../../assets/CSS/User_setup.css";
+import AddUser from "./AddUser";
+import DocumentRight from "./DocumentRight";
+import PasswordRuleSetup from "./PasswordRuleSetup";
+import React, { useState } from "react";
+import UserGroup from "./UserGroup";
 
 const NAV_PAGES = [
   { label: "User", component: <User /> },

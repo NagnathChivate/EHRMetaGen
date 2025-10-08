@@ -1,13 +1,6 @@
 import "../assets/CSS/LeftSidebar.css";
-import React, { useState } from "react";
-
-// Sidebar Component
 import AdminSideLeft from "./Admin/AdminSideLeft";
-
-// Sub-pages
-import MasterPhysician from "./Admin/sub-pages/master_physician";
-import Scheduler from "./Admin/sub-pages/schedular";
-import UserSetup from "./Admin/sub-pages/user_setup";
+import React, { useState } from "react";
 
 export default function Admin() {
   const [isOpen, setIsOpen] = useState(true); // sidebar visible by default
