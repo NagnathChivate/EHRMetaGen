@@ -1,8 +1,8 @@
-import "../../../assets/CSS/User_setup.css";
 import AddUser from "./AddUser";
 import DocumentRight from "./DocumentRight";
 import PasswordRuleSetup from "./PasswordRuleSetup";
 import React, { useState } from "react";
+import User from "./User";
 import UserGroup from "./UserGroup";
 
 const NAV_PAGES = [
@@ -18,17 +18,20 @@ export default function UserSetup() {
 
   return (
     <div className="setup-main">
-      <div className="setup-navbar">
+      {/* Left mini-nav inside User Setup */}
+      <div className="setup-navbar tab_bar">
         {NAV_PAGES.map((item, idx) => (
           <button
-            className={`setup-nav-btn${activeIdx === idx ? ' active' : ''}`}
-            onClick={() => setActiveIdx(idx)}
             key={item.label}
+            className={`tabbtn setup-nav-btn${activeIdx === idx ? " active" : ""}`}
+            onClick={() => setActiveIdx(idx)}
           >
             {item.label}
           </button>
         ))}
       </div>
+
+      {/* Content area on right */}
       <div className="setup-content">
         {NAV_PAGES[activeIdx].component}
       </div>

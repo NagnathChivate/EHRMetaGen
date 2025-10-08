@@ -76,3 +76,35 @@ h1 {
       background: #f7f7f7;
     color: #1565c0;
 }
+
+
+.tab_bar{background: #FFF;}
+
+.tab_bar .tabbtn{
+      position: relative;
+    background: #1565c0;
+    box-shadow: none;
+    border: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    color: #FFF;
+    width: 200px;
+    padding: 8px 0px;
+}
+.tab_bar .tabbtn::after{
+     content: "";
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: #FFF;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    top: -2px;
+    right: 0px;
+}
+.tab_bar .tabbtn.active{
+      background: #f7f7f7;
+    color: #1565c0;
+}
+.tabbtn::before{
+  content: "";
+}

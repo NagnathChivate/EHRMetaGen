@@ -1,6 +1,6 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../assets/CSS/AdminSideLeft.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
   const [activeTab, setActiveTab] = useState("EHR");
