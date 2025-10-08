@@ -1,0 +1,96 @@
+.adduser-popup-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(32,103,192,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.adduser-popup {
+  background: #fafdff;
+  border-radius: 22px;
+  padding: 18px 16px 18px 16px;
+  width: 580px;
+  max-width: 96vw;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.adduser-form-rows-2col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.adduser-form-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 2px;
+}
+
+.form-row input {
+  padding: 7px 8px;
+  border-radius: 8px;
+  border: 1.2px solid #bfe9fd;
+  background: #f3faff;
+  font-size: 1rem;
+  color: #0e224f;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.adduser-popup h2 {
+  color: #187cc7;
+  font-weight: 800;
+  margin-bottom: 13px;
+  font-size: 1.23rem;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 700px) {
+  .adduser-popup { width: 98vw; padding: 10px 2vw; min-width: 140px;}
+  .adduser-form-row { flex-direction: column; gap: 5px; }
+}
+
+.medcare-btn-rounded{
+    background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 1.01rem;
+  color: #38a6ca;
+  border-radius: 14px;
+  padding: 11px 29px;
+  transition: background .22s, color .17s;
+  cursor: pointer;
+}
+.medcare-btn-rounded:hover{
+    color: #fff;
+    background: linear-gradient(95deg, var(--uc-btn1) 60%, var(--uc-btn2));
+    
+}
