@@ -16,11 +16,6 @@
     flex-direction: column;
     width: 15%;
 }
-.Leftsidebar .maintab.nav-tabs {
-width: 100%;
-    display: inline-block;
-    margin: 0px;
-}
 .Leftsidebar .maintab .nav-item{
       width: 50%;
     float: left;   
@@ -88,20 +83,22 @@ width: 100%;
 
 
 /* Toggle button styling */
+.menu_container{
+position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+}
+.top_container{
+padding-left: 40px;
+}
 .toggle-btn {
-  position: absolute;
-  top: 27px;
-  right: 54px;
-  background: linear-gradient(90deg,#73c4fc 40%, #0d6efd 90%);
-  color: #fff;
-  border: none;
-  border-radius: 99px;
-  box-shadow: 0 2px 28px #0d6efd26;
-  font-size: 1.31rem;
-  padding: 10px 24px;
-  cursor: pointer;
-  z-index: 50;
-  transition: background .22s;
+   background: linear-gradient(90deg, #73c4fc 40%, #0d6efd 90%);
+    color: #fff;
+    border: none;
+    padding: 5px 6px;
+    border-radius: 0px;
 }
 
 

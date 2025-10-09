@@ -48,45 +48,31 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
 
           {activeTab === "Billing" && (
             <div>
-              <ul className="nav flex-column ms-3">
+              <ul className="nav flex-column nav-menu">
                 {/* Billing Setup */}
                 <li className="nav-item">
-                  <button
-                    className={`btn btn-link text-start text-decoration-none ${
-                      activeSubTab === "BillingSetup"
-                        ? "fw-bold text-primary"
-                        : ""
-                    }`}
-                    onClick={() => {
-                      setActiveSubTab("BillingSetup");
-                      setSelectedPage("");
-                    }}
-                  >
+                  <a href="#"   className={`text-decoration-none ${ activeSubTab === "BillingSetup" ? "fw-bold text-primary"  : "" }`}  onClick={() => {
+                      setActiveSubTab("BillingSetup"); setSelectedPage("");
+                    }}>
                     Billing Setup
-                  </button>
+                  </a>
                 </li>
 
                 {/* Practice Setup */}
                 <li className="nav-item">
-                  <button
-                    className={`btn btn-link text-start text-decoration-none ${
-                      activeSubTab === "PracticeSetup"
-                        ? "fw-bold text-primary"
-                        : ""
-                    }`}
+                  <a href="#" className={`text-decoration-none ${activeSubTab === "PracticeSetup"? "fw-bold text-primary" : "" }`}
                     onClick={() => {
                       setActiveSubTab("PracticeSetup");
                       setSelectedPage("");
-                    }}
-                  >
+                    }}>
                     Practice Setup
-                  </button>
+                  </a>
 
                   {/* Sub-pages under Practice Setup */}
                   {activeSubTab === "PracticeSetup" && (
                     <ul className="nav flex-column ms-4 mt-1">
                       <li>
-                        <button
+                        <a
                           className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
                             selectedPage === "MasterPhysician"
                               ? "text-dark fw-semibold"
@@ -95,10 +81,10 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                           onClick={() => setSelectedPage("MasterPhysician")}
                         >
                           Master Physician
-                        </button>
+                        </a>
                       </li>
                       <li>
-                        <button
+                        <a
                           className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
                             selectedPage === "Scheduler"
                               ? "text-dark fw-semibold"
@@ -107,10 +93,10 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                           onClick={() => setSelectedPage("Scheduler")}
                         >
                           Scheduler
-                        </button>
+                        </a>
                       </li>
                       <li>
-                        <button
+                        <a
                           className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
                             selectedPage === "UserSetup"
                               ? "text-dark fw-semibold"
@@ -119,16 +105,13 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                           onClick={() => setSelectedPage("UserSetup")}
                         >
                           User Setup
-                        </button>
+                        </a>
                       </li>
                     </ul>
                   )}
                 </li>
               </ul>
-
-              {/* {activeSubTab === "BillingSetup" && (
-                <div className="mt-3">Billing Setup Content</div>
-              )} */}
+              
             </div>
           )}
         </div>
