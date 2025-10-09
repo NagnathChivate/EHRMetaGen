@@ -30,6 +30,9 @@ export default function Admin() {
               </button>
         </div>       
           <div className="top_container">
+            <div className="header_TP d-flex align-items-center">
+                  <span>Header</span>
+            </div>
             {/* Dynamic Page Rendering */}
                   {selectedPage === "MasterPhysician" && <MasterPhysician />}
                   {selectedPage === "Scheduler" && <Scheduler />}

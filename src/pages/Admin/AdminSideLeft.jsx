@@ -70,10 +70,10 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
 
                   {/* Sub-pages under Practice Setup */}
                   {activeSubTab === "PracticeSetup" && (
-                    <ul className="nav flex-column ms-4 mt-1">
+                    <ul className="nav flex-column sub-menu-ul">
                       <li>
                         <a
-                          className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
+                          className={`text-decoration-none ${
                             selectedPage === "MasterPhysician"
                               ? "text-dark fw-semibold"
                               : "text-secondary"
@@ -85,7 +85,7 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                       </li>
                       <li>
                         <a
-                          className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
+                          className={`text-decoration-none ${
                             selectedPage === "Scheduler"
                               ? "text-dark fw-semibold"
                               : "text-secondary"
@@ -97,7 +97,7 @@ export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
                       </li>
                       <li>
                         <a
-                          className={`btn btn-link text-start w-100 py-1 px-0 text-decoration-none ${
+                          className={`text-decoration-none ${
                             selectedPage === "UserSetup"
                               ? "text-dark fw-semibold"
                               : "text-secondary"
