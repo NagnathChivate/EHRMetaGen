@@ -85,7 +85,7 @@ h1 {
 
 .tab_bar .tabbtn{
       position: relative;
-    background: #1565c0;
+    background:linear-gradient(90deg, #53a5e5, #2671CE);
     box-shadow: none;
     border: 0px;
     border-radius: 0px;
