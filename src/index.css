@@ -47,34 +47,37 @@ h1 {
   }
 }
 
-.Ullink{width: 100%;     border-bottom: 2px solid #1565c0 !important;}
-/* .Ullink li.nav-item{} */
+.Ullink{width: 100%;border: 0px;}
 .Ullink li.nav-item .nav-link{
-  position: relative;
-    background: #1565c0;
+     position: relative;
     box-shadow: none;
-    border: 0px;
     border-radius: 0px;
-        border-top-left-radius: 10px;
-        font-weight: 600;
-            color: #FFF;
+    font-weight: normal;
+    margin: 0px;
+    color: #000;
+    border-bottom: 1px solid #1565c0;
 }
 .Ullink li.nav-item .nav-link::before{
   content: "";
 }
 .Ullink li.nav-item .nav-link::after{
      content: "";
-    position: absolute;
+    /* position: absolute;
     width: 20%;
     height: 100%;
     background: #FFF;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     top: 0px;
-    right: 0px;
+    right: 0px; */
 }
 .Ullink li.nav-item .nav-link.active{
-      background: #f7f7f7;
+             background: #f7f7f7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid #1565c0;
+    border-bottom: 0px; 
     color: #1565c0;
+    font-weight: 600;
 }
 
 

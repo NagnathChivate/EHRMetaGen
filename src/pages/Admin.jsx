@@ -22,30 +22,28 @@ export default function Admin() {
       )}
 
       {/* Right Container */}
-      <section
-        className="Right_container flex-grow-1 position-relative"
-        style={{ width: isOpen ? "85%" : "100%" }}
-      >
+      <section className="Right_container flex-grow-1 position-relative"  style={{ width: isOpen ? "85%" : "100%" }} >
         {/* Sidebar Toggle Button */}
-        <button
-          className="toggle-btn btn btn-light position-absolute top-0 end-0 m-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
-        </button>
+        <div className="menu_container">
+              <button  className="toggle-btn btn btn-light" onClick={() => setIsOpen(!isOpen)}>
+                        <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
+              </button>
+        </div>       
+          <div className="top_container">
+            {/* Dynamic Page Rendering */}
+                  {selectedPage === "MasterPhysician" && <MasterPhysician />}
+                  {selectedPage === "Scheduler" && <Scheduler />}
+                  {selectedPage === "UserSetup" && <UserSetup />}
 
-        {/* Dynamic Page Rendering */}
-        {selectedPage === "MasterPhysician" && <MasterPhysician />}
-        {selectedPage === "Scheduler" && <Scheduler />}
-        {selectedPage === "UserSetup" && <UserSetup />}
-
-        {/* Default Dashboard */}
-        {!selectedPage && (
-          <div className="p-4">
-            <h2>Admin Dashboard</h2>
-            <p>Select a module from the sidebar to begin.</p>
+                  {/* Default Dashboard */}
+                  {!selectedPage && (
+                    <div className="p-4">
+                      <h2>Admin Dashboard</h2>
+                      <p>Select a module from the sidebar to begin.</p>
+                    </div>
+                  )}
           </div>
-        )}
+      
       </section>
     </div>
   );
