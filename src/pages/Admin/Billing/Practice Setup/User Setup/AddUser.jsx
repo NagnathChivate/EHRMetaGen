@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-// import "../../../../assets/CSS/AddUserPopup.css";
-// import "../../../../../assets/CSS/"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../../../../assets/CSS/AddUser.css"
 
 export default function AddUser() {
   const [showPopup, setShowPopup] = useState(false);
@@ -28,74 +27,148 @@ export default function AddUser() {
   };
 
   return (
-    <div>
-      <button className="medcare-btn-rounded" onClick={() => setShowPopup(true)}>
-        Add User
-      </button>
-      {showPopup && (
-        <div className="adduser-popup-bg">
-          <div className="adduser-popup">
-            <h2>Add User</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="adduser-form-rows-2col">
-                <div className="adduser-form-row">
-                  <div className="form-row">
-                    <label>Last Name</label>
-                    <input name="lastName" value={form.lastName} onChange={handleChange} required />
-                  </div>
-                  <div className="form-row">
-                    <label>First Name</label>
-                    <input name="firstName" value={form.firstName} onChange={handleChange} required />
-                  </div>
-                </div>
-                <div className="adduser-form-row">
-                  <div className="form-row">
-                    <label>Middle Name</label>
-                    <input name="middleName" value={form.middleName} onChange={handleChange} />
-                  </div>
-                  <div className="form-row">
-                    <label>Speciality</label>
-                    <input name="speciality" value={form.speciality} onChange={handleChange} />
-                  </div>
-                </div>
-                <div className="adduser-form-row">
-                  <div className="form-row">
-                    <label>NPI</label>
-                    <input name="npi" value={form.npi} onChange={handleChange} />
-                  </div>
-                  <div className="form-row">
-                    <label>Federal Id</label>
-                    <input name="federalId" value={form.federalId} onChange={handleChange} />
-                  </div>
-                </div>
-                <div className="adduser-form-row">
-                  <div className="form-row">
-                    <label>Speciality Code</label>
-                    <input name="specialityCode" value={form.specialityCode} onChange={handleChange} />
-                  </div>
-                  <div className="form-row">
-                    <label>Title</label>
-                    <input name="title" value={form.title} onChange={handleChange} />
-                  </div>
-                </div>
-                <div className="adduser-form-row">
-                  <div className="form-row">
-                    <label>Signature</label>
-                    <input name="signature" value={form.signature} onChange={handleChange} />
-                  </div>
-                  <div className="form-row" style={{visibility:'hidden'}}>{/* invisible to fill last col */}</div>
-                </div>
+    <>
+    
+      {/* 🌟 Main UI */}
+      <div className="container py-4 text-center">
+        <button
+          className="btn btn-primary rounded-pill px-4"
+          onClick={() => setShowPopup(true)}
+        >
+          Add User
+        </button>
+
+        {showPopup && (
+          <div className="custom-modal-bg">
+            <div className="custom-modal">
+              <div className="modal-header  text-white rounded-top">
+                <h5 className="modal-title">Add User</h5>
+                <button
+                  type="button"
+                  className="btn-close btn-close-white"
+                  onClick={() => setShowPopup(false)}
+                ></button>
               </div>
-              <div className="form-actions">
-                <button type="submit" className="medcare-btn-rounded">Save</button>
-                <button type="button" className="medcare-btn-rounded" onClick={() => setShowPopup(false)}>
-                  Cancel
-                </button>
-              </div>
-            </form>
+
+              <form onSubmit={handleSubmit}>
+                <div className="modal-body p-4">
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <label className="form-label">Last Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="lastName"
+                        value={form.lastName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">First Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="firstName"
+                        value={form.firstName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <label className="form-label">Middle Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="middleName"
+                        value={form.middleName}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">Speciality</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="speciality"
+                        value={form.speciality}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <label className="form-label">NPI</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="npi"
+                        value={form.npi}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">Federal Id</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="federalId"
+                        value={form.federalId}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <label className="form-label">Speciality Code</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="specialityCode"
+                        value={form.specialityCode}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">Title</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="title"
+                        value={form.title}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <label className="form-label">Signature</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="signature"
+                        value={form.signature}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="modal-footer d-flex justify-content-end p-3">
+                  <button type="submit" className="btn rounded-pill px-4">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    className="btn rounded-pill px-4 ms-2"
+                    onClick={() => setShowPopup(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }

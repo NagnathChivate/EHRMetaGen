@@ -1,23 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+
+// UserSetup.jsx
 import React from "react";
+import AddUser from "./AddUser";
 
 export default function User() {
   return (
-    <div>
-      
-      <p>This is the User details page.</p>
+    <div className="setup-main">
+      {/* --- Single Navbar Tab --- */}
+      <div className="setup-navbar tab_bar">
+        <button className="tabbtn setup-nav-btn active">Add User</button>
+      </div>
+
+      {/* --- Content --- */}
+      <div className="setup-content">
+        <AddUser />
+      </div>
     </div>
   );
 }
-
-
-
-// const User = () => {
-//   return (
-//     <div>
-//       <h2>User</h2>
-//      <p>This is the User details page.</p>
-//     </div>
-//   )
-// }
-
-// export default User
