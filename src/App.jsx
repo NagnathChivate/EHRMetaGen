@@ -6,7 +6,7 @@ import "./index.css";
 import Admin from "./pages/Admin";
 import AppNavbar from "./components/AppNavbar";
 import Dashboard from "./pages/Dashboard";
-import Messages from "./pages/Messages";
+import Messages from "./pages/Message/Messages";
 import React from "react";
 import Reports from "./pages/Reports";
 import Scheduler from "./pages/Scheduler";

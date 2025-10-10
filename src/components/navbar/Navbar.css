@@ -1,49 +1,138 @@
-/* src/components/Navbar.css */
-
 :root {
- --header-bg: #2E7D8C; 
-  --header-text: #ffffff;
-  --button-hover: #319795;
+  --navbar-bg: #f3fbfe; /* softer pastel blue */
+  --navbar-border: #d6ebfa;
+  --navbar-shadow: 0 8px 32px 0 rgba(13,110,253,0.1);
+  --navbar-radius: 30px;
+  --navbar-logo-main: #0dbadf;
+  --navbar-link: #0e224f;
+  --navbar-link-hover: #187cc7;
+  --navbar-link-active: #fff;
+  --navbar-link-bg-active: #51bdec;
+  --navbar-link-bg-hover: #e8f7fd;
+  --navbar-btn-bg: #15aefa;
+  --navbar-btn-text: #fff;
+  --font-navbar: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .app-navbar {
-  background-color: var(--header-bg);
-  color: var(--header-text);
-  padding: 0.8rem 1rem;
+  background: var(--navbar-bg);
+  border-radius: var(--navbar-radius);
+  box-shadow: var(--navbar-shadow);
+  padding: 1.6rem 4rem;
+  font-family: var(--font-navbar);
+  border: 1.5px solid var(--navbar-border);
+  margin-top: 38px;
+  margin-bottom: 32px;
+  transition: box-shadow 0.3s ease-in-out;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  -moz-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.app-navbar:hover {
+  box-shadow: 0 10px 40px 0 rgba(13,110,253,0.15);
 }
 
 .navbar-logo {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: var(--header-text);
+  font-weight: 900;
+  font-size: 2.2rem;
+  letter-spacing: .18em;
+  color: var(--navbar-logo-main);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  text-shadow: 0 3px 12px rgba(13,110,253,0.1);
+  padding-left: 8px;
+  /* user-select: none; */
 }
 
-.app-navbar .nav-link {
-  color: var(--header-text);
-  margin-right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
+.app-navbar .navbar-toggler {
+  border: none;
+  background: transparent;
+  color: var(--navbar-logo-main);
+  font-size: 1.65rem;
+  border-radius: 20px;
+  padding: 10px 16px;
+  margin-left: 12px;
   transition: color 0.3s ease;
 }
 
-.app-navbar .nav-link:hover {
-  color: var(--button-hover);
- 
+.app-navbar .navbar-toggler:hover {
+  color: #0a86c0;
+}
+
+.app-navbar .nav-link {
+  color: var(--navbar-link);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 0.75rem 1.6rem;
+  transition: background 0.3s, color 0.3s;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.035em;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link:focus {
+  color: var(--navbar-link-hover);
+  background: var(--navbar-link-bg-hover);
+  text-decoration: none;
+  box-shadow: 0 0 8px #51bdecaa;
+  cursor: pointer;
+}
+
+.app-navbar .nav-link.active,
+.app-navbar .nav-link[aria-current="page"] {
+  background: var(--navbar-link-bg-active);
+  color: var(--navbar-link-active);
+  box-shadow: 0 4px 20px 0 rgba(81, 189, 236, 0.4);
 }
 
 .logout-btn {
-  border-color: var(--header-text);
-  color: var(--header-text);
-  transition: background-color 0.3s ease;
- 
+  background: var(--navbar-btn-bg);
+  color: var(--navbar-btn-text);
+  font-weight: 700;
+  border-radius: 28px;
+  padding: 12px 38px;
+  border: none;
+  margin-left: 20px;
+  box-shadow: 0 3px 16px #15aefa55;
+  letter-spacing: 0.08em;
+  font-size: 1.16rem;
+  text-transform: uppercase;
+  transition: background 0.27s ease, color 0.27s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .logout-btn:hover {
-  background-color: var(--button-hover);
-  border-color: var(--button-hover);
-  color: white;
-  border: #ffffff;
-  
+  background: #0a85cc;
+  color: #fff;
+  box-shadow: 0 4px 20px #0a85ccaa;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .app-navbar {
+    margin: 18px 12px 16px 12px;
+    padding: 1rem 1.2rem;
+    border-radius: 24px;
+  }
+  .navbar-logo {
+    font-size: 1.3rem;
+    padding-left: 4px;
+    letter-spacing: 0.13em;
+  }
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-left: 12px;
+  }
+  .app-navbar .nav-link {
+    padding: 0.56rem 1rem;
+    font-size: 1rem;
+    margin-right: 12px;
+  }
 }
