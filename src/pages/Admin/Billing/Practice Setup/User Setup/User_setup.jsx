@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-// Adjust the path if your User_setup.css is elsewhere
-import '../../../assets/CSS/User_setup.css';
-
-// Import sub-page components
-import User from './user-setup-sub-pages/User';
-import UserGroup from './user-setup-sub-pages/UserGroup';
-import DocumentRight from './user-setup-sub-pages/DocumentRight';
-import PasswordRuleSetup from './user-setup-sub-pages/PasswordRuleSetup';
-import AddUser from './user-setup-sub-pages/AddUser';
+import AddUser from "./AddUser";
+import DocumentRight from "./DocumentRight";
+import PasswordRuleSetup from "./PasswordRuleSetup";
+import React, { useState } from "react";
+import User from "./User";
+import UserGroup from "./UserGroup";
 
 const NAV_PAGES = [
   { label: "User", component: <User /> },
@@ -22,17 +18,20 @@ export default function UserSetup() {
 
   return (
     <div className="setup-main">
-      <div className="setup-navbar">
+      {/* Left mini-nav inside User Setup */}
+      <div className="setup-navbar tab_bar">
         {NAV_PAGES.map((item, idx) => (
           <button
-            className={`setup-nav-btn${activeIdx === idx ? ' active' : ''}`}
-            onClick={() => setActiveIdx(idx)}
             key={item.label}
+            className={`tabbtn setup-nav-btn${activeIdx === idx ? " active" : ""}`}
+            onClick={() => setActiveIdx(idx)}
           >
             {item.label}
           </button>
         ))}
       </div>
+
+      {/* Content area on right */}
       <div className="setup-content">
         {NAV_PAGES[activeIdx].component}
       </div>

@@ -1,19 +1,16 @@
 import "../assets/CSS/LeftSidebar.css";
+import AdminSideLeft from "./Admin/AdminSideLeft";
+import MasterPhysician from "./Admin/Billing/Practice Setup/Master Physician/master_physician";
 import React, { useState } from "react";
 
-// Sidebar Component
-import AdminSideLeft from "./Admin/AdminSideLeft";
+import UserSetup from "./Admin/Billing/Practice Setup/User Setup/User_setup";
+import AppointmentType from "./Admin/Billing/Schedular/appointment_type";
+import Resource from "./Admin/Billing/Schedular/resource";
+import CancelledReason from "./Admin/Billing/Schedular/cancelled_reason";
 
-// Sub-pages
-import MasterPhysician from "./Admin/sub-pages/master_physician";
-import AppointmentType from "./Admin/sub-pages/shedular-sub-pages/appointment_type";
-import CancelledReason from "./Admin/sub-pages/shedular-sub-pages/cancelled_reason";
-import UserSetup from "./Admin/sub-pages/user_setup";
-import Resource from "./Admin/sub-pages/shedular-sub-pages/Resource";
-
-export default function Admin() {
-  const [isOpen, setIsOpen] = useState(true); // sidebar visible
-  const [selectedPage, setSelectedPage] = useState(""); // which sub-page is open
+export default function Admin() { 
+  const [isOpen, setIsOpen] = useState(true); // Sidebar visibility
+  const [selectedPage, setSelectedPage] = useState(""); // Active page
 
   return (
     <div className="ht_100 d-flex">
@@ -28,24 +25,34 @@ export default function Admin() {
       )}
 
       {/* Right Container */}
-      <section
-        className="Right_container flex-grow-1 p-4"
-        style={{ width: isOpen ? "85%" : "100%" }}
-      >
-        {/* Render Subpages */}
-        {selectedPage === "MasterPhysician" && <MasterPhysician />}
-        {selectedPage === "AppointmentType" && <AppointmentType />}
-        {selectedPage === "Resource" && <Resource />}
-        {selectedPage === "CancelledReason" && <CancelledReason />}
-        {selectedPage === "UserSetup" && <UserSetup />}
+      <section className="Right_container flex-grow-1 position-relative"  style={{ width: isOpen ? "85%" : "100%" }} >
+        {/* Sidebar Toggle Button */}
+        <div className="menu_container">
+              <button  className="toggle-btn btn btn-light" onClick={() => setIsOpen(!isOpen)}>
+                        <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
+              </button>
+        </div>       
+          <div className="top_container">
+            <div className="header_TP d-flex align-items-center">
+                  <span>Header</span>
+            </div>
+            {/* Dynamic Page Rendering */}
+                  {selectedPage === "MasterPhysician" && <MasterPhysician />}
+                  
+                  {selectedPage === "UserSetup" && <UserSetup />}
+                   {selectedPage === "AppointmentType" && <AppointmentType />}
+                   {selectedPage === "Resource" && <Resource />}
+                  {selectedPage === "CancelledReason" && <CancelledReason />}
 
-        {/* Default Dashboard */}
-        {!selectedPage && (
-          <>
-            <h2>Dashboard Content</h2>
-            <p>This is your main area where content will appear.</p>
-          </>
-        )}
+                  {/* Default Dashboard */}
+                  {!selectedPage && (
+                    <div className="p-4">
+                      <h2>Admin Dashboard</h2>
+                      <p>Select a module from the sidebar to begin.</p>
+                    </div>
+                  )}
+          </div>
+      
       </section>
     </div>
   );

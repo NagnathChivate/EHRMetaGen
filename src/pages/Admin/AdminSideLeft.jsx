@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../assets/CSS/AdminSideLeft.css";
 
-export default function AdminSideLeft({ selectedPage, setSelectedPage }) {
+export default function AdminSideLeft({ setSelectedPage, selectedPage }) {
   const [activeTab, setActiveTab] = useState("EHR");
   const [activeSubTab, setActiveSubTab] = useState("");
   const [isSchedulerOpen, setIsSchedulerOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
-  // Keep Scheduler submenu open if any Scheduler page is selected
-  React.useEffect(() => {
+  // ✅ Keep Scheduler submenu open if any scheduler page is active
+  useEffect(() => {
     if (["AppointmentType", "Resource", "CancelledReason"].includes(selectedPage)) {
       setActiveSubTab("PracticeSetup");
       setIsSchedulerOpen(true);
@@ -16,145 +17,170 @@ export default function AdminSideLeft({ selectedPage, setSelectedPage }) {
   }, [selectedPage]);
 
   return (
-    <div style={{ minWidth: "250px" }}>
+    <div className="w100">
       {/* Tabs Header */}
-      <ul className="nav nav-tabs mb-3">
-        <li className="nav-item">
-          <button
-            className={`nav-link ${activeTab === "EHR" ? "active" : ""}`}
-            onClick={() => {
-              setActiveTab("EHR");
-              setActiveSubTab("");
-              setSelectedPage("");
-            }}
-          >
-            EHR
-          </button>
-        </li>
-        <li className="nav-item">
-          <button
-            className={`nav-link ${activeTab === "Billing" ? "active" : ""}`}
-            onClick={() => {
-              setActiveTab("Billing");
-              setActiveSubTab("");
-              setSelectedPage("");
-            }}
-          >
-            Billing
-          </button>
-        </li>
-      </ul>
-
-      {/* Sidebar Content */}
-      {activeTab === "EHR" && <div>EHR Active</div>}
-
-      {activeTab === "Billing" && (
-        <ul className="nav flex-column ms-1">
-          {/* Billing Setup */}
-          <li>
+      <div className="w100">
+        <ul className="nav nav-tabs maintab Ullink">
+          <li className="nav-item">
             <button
-              className={`btn btn-link text-start ${
-                activeSubTab === "BillingSetup" ? "fw-bold text-primary" : ""
-              }`}
+              className={`nav-link ${activeTab === "EHR" ? "active" : ""}`}
               onClick={() => {
-                setActiveSubTab("BillingSetup");
-                setSelectedPage("BillingSetup");
+                setActiveTab("EHR");
+                setActiveSubTab("");
+                setSelectedPage("");
               }}
             >
-              Billing Setup
+              EHR
             </button>
           </li>
 
-          {/* Practice Setup */}
-          <li>
+          <li className="nav-item">
             <button
-              className={`btn btn-link text-start ${
-                activeSubTab === "PracticeSetup" ? "fw-bold text-primary" : ""
-              }`}
-              onClick={() => setActiveSubTab("PracticeSetup")}
+              className={`nav-link ${activeTab === "Billing" ? "active" : ""}`}
+              onClick={() => {
+                setActiveTab("Billing");
+                setActiveSubTab("");
+                setSelectedPage("");
+              }}
             >
-              Practice Setup
+              Billing
             </button>
+          </li>
+        </ul>
+      </div>
 
-            {activeSubTab === "PracticeSetup" && (
-              <ul className="nav flex-column ms-3 mt-1">
-                <li>
-                  <button
-                    className={`btn btn-link text-start ${
-                      selectedPage === "MasterPhysician"
-                        ? "fw-bold text-dark"
-                        : "text-secondary"
-                    }`}
-                    onClick={() => setSelectedPage("MasterPhysician")}
+      {/* Sidebar Section */}
+      {isOpen && (
+        <div className="sidebar-content mt-2">
+          {activeTab === "EHR" && <div className="p-2">EHR Active</div>}
+
+          {activeTab === "Billing" && (
+            <div>
+              <ul className="nav flex-column nav-menu">
+                {/* Billing Setup */}
+                <li className="nav-item">
+                  <a
+                    href="#"
+                    className={`text-decoration-none ${activeSubTab === "BillingSetup" ? "fw-bold text-primary" : ""
+                      }`}
+                    onClick={() => {
+                      setActiveSubTab("BillingSetup");
+                      setSelectedPage("");
+                    }}
                   >
-                    Master Physician
-                  </button>
+                    Billing Setup
+                  </a>
                 </li>
 
-                {/* Scheduler */}
-                <li>
-                  <button
-                    className={`btn btn-link text-start ${
-                      ["AppointmentType", "Resource", "CancelledReason"].includes(selectedPage)
-                        ? "fw-bold text-dark"
-                        : "text-secondary"
-                    }`}
-                    onClick={() => setIsSchedulerOpen(!isSchedulerOpen)}
+                {/* Practice Setup */}
+                <li className="nav-item">
+                  <a
+                    href="#"
+                    className={`text-decoration-none ${activeSubTab === "PracticeSetup" ? "fw-bold text-primary" : ""
+                      }`}
+                    onClick={() => {
+                      setActiveSubTab("PracticeSetup");
+                      setSelectedPage("");
+                    }}
                   >
-                    Scheduler
-                  </button>
+                    Practice Setup
+                  </a>
 
-                  {/* Scheduler Submenu */}
-                  {isSchedulerOpen && (
-                    <ul className="nav flex-column ms-3 mt-1">
+                  {/* Sub-pages under Practice Setup */}
+                  {activeSubTab === "PracticeSetup" && (
+                    <ul className="nav flex-column sub-menu-ul ms-3 mt-1">
+                      <li>
+                        <a
+                          href="#"
+                          className={`text-decoration-none ${selectedPage === "MasterPhysician"
+                              ? "text-dark fw-semibold"
+                              : "text-secondary"
+                            }`}
+                          onClick={() => setSelectedPage("MasterPhysician")}
+                        >
+                          Master Physician
+                        </a>
+                      </li>
+
+                      {/* ✅ Scheduler Section with Toggle */}
                       <li>
                         <button
-                          className={`btn btn-link text-start ${
-                            selectedPage === "AppointmentType" ? "fw-bold text-dark" : "text-secondary"
-                          }`}
-                          onClick={() => setSelectedPage("AppointmentType")}
+                          className={ `sidebar-content btn text-decoration-none ${["AppointmentType", "Resource", "CancelledReason"].includes(selectedPage)
+                              ? "fw-bold text-dark"
+                              : "text-secondary"
+                            }`}
+                          onClick={() => setIsSchedulerOpen(!isSchedulerOpen)}
                         >
-                          Appointment Type
+                          Scheduler
+                          <i
+                            className={`bi ms-2 ${isSchedulerOpen ?"text-dark fw-semibold"  : "bi-chevron-right"
+                              }`}
+                          ></i>
                         </button>
+
+                        {/* ✅ Scheduler Submenu */}
+                        {isSchedulerOpen && (
+                          <ul className="nav flex-column ms-3 mt-1">
+                            <li>
+                              <button
+                                className={`btn text-decoration-none ${selectedPage === "AppointmentType"
+                                    ? "text-dark fw-semibold"
+                                    : "text-secondary"
+                                   
+                                  }`}
+                                onClick={() => setSelectedPage("AppointmentType")}
+                              >
+                                Appointment Type
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className={`btn text-decoration-none ${selectedPage === "Resource"
+                                    ? "fw-bold text-dark"
+                                    : "text-secondary"
+                                  }`}
+                                onClick={() => setSelectedPage("Resource")}
+                              >
+                                Resource
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className={`btn text-decoration-none ${selectedPage === "CancelledReason"
+                                    ? "fw-bold text-dark"
+                                    : "text-secondary"
+                                  }`}
+                                onClick={() => setSelectedPage("CancelledReason")}
+                              >
+                                Cancelled Reason
+                              </button>
+                            </li>
+                          </ul>
+                        )}
                       </li>
-                      <li>
+
+                      {/* User Setup (Main Level) */}
+                      <li className="nav-item mt-2">
                         <button
-                          className={`btn btn-link text-start ${
-                            selectedPage === "Resource" ? "fw-bold text-dark" : "text-secondary"
-                          }`}
-                          onClick={() => setSelectedPage("Resource")}
+                          className={`btn text-decoration-none ${selectedPage === "UserSetup"
+                              ? "fw-bold text-dark"
+                              : "text-secondary"
+                            }`}
+                          onClick={() => setSelectedPage("UserSetup")}
                         >
-                          Resource
+                          User Setup
                         </button>
                       </li>
-                      <li>
-                        <button
-                          className={`btn btn-link text-start ${
-                            selectedPage === "CancelledReason" ? "fw-bold text-dark" : "text-secondary"
-                          }`}
-                          onClick={() => setSelectedPage("CancelledReason")}
-                        >
-                          Cancelled Reason
-                        </button>
-                      </li>
+
+
                     </ul>
                   )}
                 </li>
 
-                <li>
-                  <button
-                    className={`btn btn-link text-start ${
-                      selectedPage === "UserSetup" ? "fw-bold text-dark" : "text-secondary"
-                    }`}
-                    onClick={() => setSelectedPage("UserSetup")}
-                  >
-                    User Setup
-                  </button>
-                </li>
               </ul>
-            )}
-          </li>
-        </ul>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
