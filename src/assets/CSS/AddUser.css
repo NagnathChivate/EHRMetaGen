@@ -1,0 +1,66 @@
+/* Modal Background */
+.custom-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Container */
+.custom-modal {
+  background: #fff;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.custom-modal .modal-header {
+  background: var(--navbar-btn-bg);
+  color: var(--navbar-btn-text);
+  font-family: var(--font-navbar);
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Modal Buttons */
+.custom-modal .btn {
+  background: var(--navbar-btn-bg);
+  color: var(--navbar-btn-text);
+  font-weight: 700;
+  border-radius: 28px;
+  padding: 10px 24px;
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background 0.27s ease, color 0.27s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
