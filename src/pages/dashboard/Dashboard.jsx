@@ -1,6 +1,6 @@
+import "./Dashboard.css";
 import React, { useState } from "react";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
-import "./Dashboard.css"; // scoped CSS for this component only
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Dashboard = () => {
   const patients = [
@@ -161,7 +161,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="patient-search-container my-4">
+    <div className="ht_100">  
+      <div className="patient-search-container my-2">
         {/* Header */}
         <div className="patient-search-header p-2 text-white">
           <h6 className="mb-0">Patient Search</h6>
@@ -230,7 +231,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="appointments-container my-4">
+      <div className="appointments-container my-2">
         <div className="appointments-header d-flex align-items-center justify-content-between px-3 py-2">
           <h6 className="mb-0 text-white">Appointments</h6>
 
@@ -312,7 +313,7 @@ const Dashboard = () => {
         )}
       </div>
 
-      <div className="message-container my-4">
+      <div className="message-container my-2">
         {/* Messages Section */}
         <div className="hospital-card mb-4">
           <div className="hospital-card-header d-flex justify-content-between align-items-center">
@@ -383,7 +384,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="document-container">
+      <div className="document-container my-2">
         <h2 className="document-title text-white">Documents</h2>
         <div className="table-responsive">
           <table className="document-table table-bordered">
@@ -408,6 +409,7 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+       </div>
     </>
   );
 };

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function AppNavbar() {
   return (
     <Navbar className="Navbar p-0" expand="lg">
-      <div className="container-fluid fixed-top">
+      <div className="container-fluid">
         <Navbar.Brand as={NavLink} to="/">
           EHRMetaGen
         </Navbar.Brand>

@@ -1,6 +1,4 @@
-:root {
-  
-  
+:root {   
   --row-even: #F7FFFE;
   --row-odd: #ffffff;
   --row-hover: #E8F8F5;
@@ -10,6 +8,8 @@
   --table-header-bg: #0d6efd;
   --header-text: #ffffff;
   --button-hover: #319795;
+  --table-header:#e5f0ff;
+  --tbl-color:#000;
 }
 
 /* Container */
@@ -109,9 +109,10 @@
 }
 
 .appointments-table thead th {
-    background-color: var(--header-bg);
-    color: var(--header-text);
+    background-color: var(--table-header);
+    color: var(--tbl-color);
     border: none;
+    font-weight: 600;
 }
 
 .appointments-table .table.table-bordered {
