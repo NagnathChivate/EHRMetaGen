@@ -3,8 +3,12 @@ import "../assets/CSS/LeftSidebar.css";
 import AdminSideLeft from "./Admin/AdminSideLeft";
 import MasterPhysician from "./Admin/Billing/Practice Setup/Master Physician/master_physician";
 import React, { useState } from "react";
-import Scheduler from "./Admin/Billing/Schedular/Schedular";
+
 import UserSetup from "./Admin/Billing/Practice Setup/User Setup/User_setup";
+import AppointmentType from "./Admin/Billing/Schedular/appointment_type";
+import Resource from "./Admin/Billing/Schedular/resource";
+import CancelledReason from "./Admin/Billing/Schedular/cancelled_reason";
+
 
 export default function Admin() {
   const [isOpen, setIsOpen] = useState(true); // Sidebar visibility
@@ -47,10 +51,13 @@ export default function Admin() {
 
           {/* Dynamic Page Rendering */}
           {selectedPage === "MasterPhysician" && <MasterPhysician />}
-          {selectedPage === "Scheduler" && <Scheduler />}
+
           {selectedPage === "UserSetup" && (
             <UserSetup setHeaderTitle={setHeaderTitle} />
           )}
+                  {selectedPage === "AppointmentType" && <AppointmentType />}
+                   {selectedPage === "Resource" && <Resource />}
+                  {selectedPage === "CancelledReason" && <CancelledReason />}
 
           {/* Default Dashboard */}
           {!selectedPage && (

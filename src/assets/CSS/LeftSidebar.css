@@ -21,12 +21,12 @@
     float: left;   
 }
 
-
 .Leftsidebar .maintab .nav-link,
 .Leftsidebar .maintab .btn-link {
    text-align: center;
     width: 100%;
 }
+
 
 .Leftsidebar .nav-link.active,
 .Leftsidebar .btn-link.fw-bold {
@@ -36,16 +36,22 @@
   border-radius: 14px;
 }
 
+
+/* Indented sub-menus */
 .Leftsidebar ul ul {
   margin-left: 15px;
   border-left: 3px solid #e3f4fe;
   padding-left: 10px;
 }
 
+
+/* Sub-menu style */
 .Leftsidebar .btn-link.text-secondary {
   color: #7ca5bb;
 }
 
+
+/* Section/custom labels */
 .Leftsidebar .section-label {
   font-size: 1.13rem;
   font-weight: 700;
@@ -58,6 +64,8 @@
    width: 85%;border-left: 1px solid #1565c0 !important;
 }
 
+
+/* Main headings and text */
 .Right_container h2 {
   font-size: 2.35rem;
   font-weight: 800;
@@ -66,7 +74,6 @@
   margin-bottom: 22px;
   letter-spacing: 0.9px;
 }
-
 .Right_container p {
   font-size: 1.16rem;
   color: #4f6c87;
@@ -98,73 +105,63 @@ position: absolute;
     font-weight: 600;
 }
 .toggle-btn {
-  position: absolute;
-  top: 27px;
-  right: 54px;
-  background: linear-gradient(90deg,#73c4fc 40%, #0d6efd 90%);
-  color: #fff;
-  border: none;
-  border-radius: 99px;
-  box-shadow: 0 2px 28px #0d6efd26;
-  font-size: 1.31rem;
-  padding: 10px 24px;
-  cursor: pointer;
-  z-index: 50;
-  transition: background .22s;
+   /* background: linear-gradient(90deg, #73c4fc 40%, #0d6efd 90%); */
+   background: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 6px;
+    border-radius: 0px;
 }
+
 
 .toggle-btn:hover {
   /* background: linear-gradient(90deg,#23bcef 30%,#144C9A 92%); */
   background: transparent; color: #fff;
 }
 
+
+/* Responsive design */
 @media (max-width: 1200px) {
   .ht_100 {
     padding: 18px 0;
     gap: 16px;
   }
-
   .Leftsidebar {
     margin-left: 4px;
     padding: 18px 7px 16px 12px;
   }
-
   .Right_container {
-    margin-right: 20px;
+    padding: 30px 8px 22px 12px;
+    margin-right: 8px;
     margin-left: 0;
   }
 }
-
 @media (max-width: 900px) {
   .ht_100 {
     flex-direction: column;
     padding: 8px 1px;
     gap: 7px;
   }
-
-  .Leftsidebar,
-  .Right_container {
+  .Leftsidebar, .Right_container {
     margin: 0;
     border-radius: 22px;
     width: 96vw;
     min-width: unset;
     max-width: unset;
   }
-
   .Right_container {
     padding: 18px 9px 18px 8px;
   }
 }
 
+
 @media (max-width: 600px) {
-  .Leftsidebar,
-  .Right_container {
+  .Leftsidebar, .Right_container {
     width: 100vw;
     padding-left: 2px;
     padding-right: 2px;
     border-radius: 12px;
   }
-
   .Right_container {
     margin-bottom: 20px;
   }
