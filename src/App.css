@@ -1,3 +1,9 @@
+:root{
+  --header-bg: #2671ce;
+  --header-text: #ffffff;
+  --button-hover: #319795;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
