@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { Use, useState } from "react";
 
 export default function UsestateEX1() {
 

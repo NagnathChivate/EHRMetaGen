@@ -5,7 +5,7 @@ import "./assets/CSS/font-family.css";
 import "./index.css";
 import Admin from "./pages/Admin";
 import AppNavbar from "./components/AppNavbar";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Messages from "./pages/Message/Messages";
 import React from "react";
 import Reports from "./pages/Reports";
