@@ -6,11 +6,13 @@ import AdminSideLeft from "./Admin/AdminSideLeft";
 
 // Sub-pages
 import MasterPhysician from "./Admin/sub-pages/master_physician";
-import Scheduler from "./Admin/sub-pages/schedular";
+import AppointmentType from "./Admin/sub-pages/shedular-sub-pages/appointment_type";
+import CancelledReason from "./Admin/sub-pages/shedular-sub-pages/cancelled_reason";
 import UserSetup from "./Admin/sub-pages/user_setup";
+import Resource from "./Admin/sub-pages/shedular-sub-pages/Resource";
 
 export default function Admin() {
-  const [isOpen, setIsOpen] = useState(true); // sidebar visible by default
+  const [isOpen, SetIsOpen] = useState(true); // sidebar visible
   const [selectedPage, setSelectedPage] = useState(""); // which sub-page is open
 
   return (
@@ -27,23 +29,14 @@ export default function Admin() {
 
       {/* Right Container */}
       <section
-        className="Right_container flex-grow-1"
+        className="Right_container flex-grow-1 p-4"
         style={{ width: isOpen ? "85%" : "100%" }}
       >
-        {/* Toggle Sidebar Button (optional, uncomment if needed) */}
-        {/* 
-        <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <i className="bi bi-x-lg"></i>
-          ) : (
-            <i className="bi bi-list"></i>
-          )}
-        </button>
-        */}
-
-        {/* Conditional Rendering of Subpages */}
+        {/* Render Subpages */}
         {selectedPage === "MasterPhysician" && <MasterPhysician />}
-        {selectedPage === "Scheduler" && <Scheduler />}
+        {selectedPage === "AppointmentType" && <AppointmentType />}
+        {selectedPage === "Resource" && <Resource />}
+        {selectedPage === "CancelledReason" && <CancelledReason />}
         {selectedPage === "UserSetup" && <UserSetup />}
 
         {/* Default Dashboard */}
