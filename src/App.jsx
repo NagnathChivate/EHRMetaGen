@@ -12,6 +12,7 @@ import Reports from "./pages/Reports";
 import Scheduler from "./pages/Scheduler";
 import Search from "./pages/Search";
 import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
 function Home() {
   return <h2>This Is home</h2>;
