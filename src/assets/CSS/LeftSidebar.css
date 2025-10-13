@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   --primary-color: #0d6efd;
@@ -24,11 +25,15 @@ html {
   padding: 0;
 }
 
+=======
+.w100{width: 100%;}
+>>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
 .ht_100,
 .Leftsidebar,
 .Right_container {
   font-family: var(--font-family);
 }
+<<<<<<< HEAD
 
 .ht_100 {
   min-height: 100vh;
@@ -73,6 +78,29 @@ html {
   text-align: left;
   transition: background 0.24s, color 0.20s;
   box-shadow: none;
+=======
+/* Container and global structure */
+.ht_100 {
+ height: 100%;
+    overflow: auto;
+}
+/* Sidebar */
+.Leftsidebar{
+    color: #121e3a;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+.Leftsidebar .maintab .nav-item{
+      width: 50%;
+    float: left;   
+}
+
+.Leftsidebar .maintab .nav-link,
+.Leftsidebar .maintab .btn-link {
+   text-align: center;
+    width: 100%;
+>>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
 }
 
 .Leftsidebar .nav-link.active,
@@ -100,6 +128,7 @@ html {
   margin: 24px 0 13px 0;
 }
 
+<<<<<<< HEAD
 .Leftsidebar .nav-item {
   margin-bottom: 5px;
 }
@@ -129,6 +158,11 @@ html {
   flex-direction: column;
   position: relative;
   overflow-y: auto;
+=======
+/* Main content (Right panel) design */
+.Right_container {
+   width: 85%;border-left: 1px solid #1565c0 !important;
+>>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
 }
 
 .Right_container h2 {
@@ -147,6 +181,7 @@ html {
   letter-spacing: 0.04rem;
 }
 
+<<<<<<< HEAD
 .toggle-btn {
   position: absolute;
   top: 27px;
@@ -161,10 +196,47 @@ html {
   cursor: pointer;
   z-index: 50;
   transition: background 0.22s ease-in-out;
+=======
+
+/* Toggle button styling */
+.menu_container{
+position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+}
+.top_container{}
+.header_TP{
+     padding-left: 40px;
+    height: 30px;
+    background: #1565c0;
+    background: rgb(38, 113, 206);
+    margin-bottom: 2px;
+    float: left;
+    width: 100%;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+}
+.toggle-btn {
+   /* background: linear-gradient(90deg, #73c4fc 40%, #0d6efd 90%); */
+   background: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 6px;
+    border-radius: 0px;
+>>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
 }
 
 .toggle-btn:hover {
+<<<<<<< HEAD
   background: linear-gradient(90deg, #23bcef 30%, #144C9A 92%);
+=======
+  /* background: linear-gradient(90deg,#23bcef 30%,#144C9A 92%); */
+  background: transparent; color: #fff;
+>>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
 }
 
 @media (max-width: 1200px) {

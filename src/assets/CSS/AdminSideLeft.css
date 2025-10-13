@@ -21,3 +21,34 @@
 .toggle-btn-inline i {
   vertical-align: middle;
 }
+.nav-menu {
+     list-style: none;
+    margin: 0;
+    display: flex;
+    background-color: #FFF;
+    padding: 0px;
+ }
+.nav-menu li{
+
+}
+.nav-menu li a {
+     font-size: 14px;
+    color: #000;
+    display: inline-block;
+    transition: 0.3s;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.nav-menu li a:hover {
+  background-color: #007bff;
+  color: white;
+}
+.nav-menu .sub-menu-ul{
+  padding: 0px;
+    margin: 0px;
+    background: #F7F7F7;
+}
+.nav-menu .sub-menu-ul li{}
+.nav-menu .sub-menu-ul li a{}
