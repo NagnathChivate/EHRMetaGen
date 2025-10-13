@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
-import "./Dashboard.css"; // scoped CSS for this component only
+import "../../assets/CSS/Dashboard.css"; // scoped CSS for this component only
 
 const Dashboard = () => {
   const patients = [
