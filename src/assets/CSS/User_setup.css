@@ -5,24 +5,6 @@ body, html {
 }
 
 .setup-main {
-<<<<<<< HEAD
- background: var(--navbar-bg);
-    font-family: var(--font);
-    /* margin: 0 auto; */
-    /* padding: 52px 0; */
-    min-width: 340px;
-    max-width: 740px;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.setup-navbar {
-  display: flex;
-  gap: 16px;
-  background: var(--navbar-bg);
-=======
   background: var(--uc-bg);
   margin: 0 auto;
 }
@@ -30,7 +12,6 @@ body, html {
 .setup-navbar {
  
   background: var(--uc-card);
->>>>>>> 0ebe4bcd1a9d796f59d3d75d9bf85003896b6c7e
   box-shadow: var(--uc-shadow);
   
 }
