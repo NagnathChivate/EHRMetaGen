@@ -1,248 +1,99 @@
-:root {
-  
-  
+:root {   
   --row-even: #F7FFFE;
   --row-odd: #ffffff;
   --row-hover: #E8F8F5;
   --border-color: #D5E8E4;
   --text-primary: #1F2937;
   --text-secondary: #6B7280;
-  --table-header-bg: #0d6efd;
+  --table-header: #e5f0ff;
+  --tbl-color: #000;
+  --header-bg: #2671ce !important;
   --header-text: #ffffff;
   --button-hover: #319795;
 }
 
-/* Container */
-.patient-search-container {
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding: 0px;
-    width: 100%;
-    overflow: hidden;
-    /* keeps layout neat */
-}
-
-/* Header */
-.patient-search-header {
-    background-color: var(--header-bg);
-    color: var(--header-text);
-    border-radius: 6px 6px 0 0;
-}
-
-/* ✅ Added: make the table wrapper scrollable */
-.patient-search-table {
-    width: 100%;
-    overflow-x: auto;
-    /* enables horizontal scroll on small screens */
-    -webkit-overflow-scrolling: touch;
-    /* smooth scroll on mobile */
-}
-
-/* Table */
-.patient-search-table table {
-    margin-bottom: 0;
-    border-color: var(--border-color);
-    min-width: 600px;
-    /* ✅ ensures table doesn’t shrink too much */
-    white-space: nowrap;
-    /* ✅ prevents text wrapping */
-}
-
-.patient-search-table thead {
-    background-color: var(--table-header-bg);
-    color: var(--header-text);
-}
-
-.patient-search-table tbody tr:nth-child(even) {
-    background-color: var(--row-even);
-}
-
-.patient-search-table tbody tr:nth-child(odd) {
-    background-color: var(--row-odd);
-}
-
-.patient-search-table tbody tr:hover {
-    background-color: var(--row-hover);
-    cursor: pointer;
-}
-
-.patient-row.highlighted {
-    background-color: var(--highlight-row) !important;
-    color: #fff;
-}
-
-.appointments-container {
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding: 0px;
-}
-
-/* Header */
-.appointments-header {
-    background-color: var(--header-bg);
-    border-radius: 6px 6px 0 0;
-}
-
-.appointments-header h6 {
-    font-weight: 600;
-}
-
-.toggle-btn {
-    border: none;
-    padding: 4px 6px;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.toggle-btn:hover {
-    background-color: var(--button-hover);
-    color: #fff;
-}
-
-/* Table */
-.appointments-table thead {
-    background-color: var(--header-bg);
-    color: var(--header-text);
-}
-
-.appointments-table thead th {
-    background-color: var(--header-bg);
-    color: var(--header-text);
-    border: none;
-}
-
-.appointments-table .table.table-bordered {
-    border-top: none;
-    min-width: 600px;
-}
-
-.appointments-table tbody tr:nth-child(even) {
-    background-color: var(--row-even);
-}
-
-.appointments-table tbody tr:nth-child(odd) {
-    background-color: var(--row-odd);
-}
-
-.appointments-table tbody tr:hover {
-    background-color: var(--row-hover);
-    cursor: pointer;
-}
-
-.appointments-row.highlighted {
-    background-color: var(--highlight-row) !important;
-    color: #fff;
-}
-
-.hospital-table{
-    min-width: 600px;
-}
-
-/* Card Styling */
-.hospital-card {
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  background: #fff;
-}
-
-.hospital-card-header {
-  background: var(--header-bg);
-  padding: 8px 12px;
-}
-
-/* Table Styling */
-.hospital-table th {
+/* 🌟 Common Heading Styles */
+.main-heading {
   background-color: var(--header-bg);
   color: var(--header-text);
-  font-size: 14px;
-  padding: 6px;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 15px;
+  font-size: 1rem;
 }
 
-.hospital-table td {
+/* 🌟 Common Sub-Heading (Table Header Row) */
+.table-subheading th {
+  background-color: var(--table-header);
+  color: var(--tbl-color);
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 10px;
+}
+
+/* 🌟 Common Table Container */
+.table-section {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+/* 🌟 Common Table Styles */
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.table-section th, .table-section td {
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
   font-size: 14px;
   color: var(--text-primary);
-  padding: 6px;
 }
 
-.hospital-table tbody tr:nth-child(even) {
+.table-section tbody tr:nth-child(even) {
   background-color: var(--row-even);
 }
 
-.hospital-table tbody tr:nth-child(odd) {
+.table-section tbody tr:nth-child(odd) {
   background-color: var(--row-odd);
 }
 
-.hospital-table tbody tr:hover {
+.table-section tbody tr:hover {
   background-color: var(--row-hover);
   cursor: pointer;
 }
 
-/* Container styling */
-.document-container {
-    border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(46, 125, 140, 0.2);
+/* 🌟 Highlighted Row */
+.table-section tbody tr.highlighted {
+  background-color: var(--header-bg) !important;
+  color: #fff;
 }
 
-/* Title */
-.document-title {
-  background-color: var(--header-bg);
-  font-size: 1rem;
-  margin-bottom: 0px;
-  font-weight: 600;
-  border-radius: 6px 6px 0 0;
-  padding: 8px 12px;
+/* 🌟 Toggle button */
+.toggle-btn {
+  border: none;
+  padding: 4px 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+.toggle-btn:hover {
+  background-color: var(--button-hover);
+  color: #fff;
 }
 
-/* Table styling */
-.document-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid var(--border-color);
-  background-color: var(--row-odd);
-  font-family: 'Inter', sans-serif;
-  color: var(--text-primary);
-  min-width: 600px;
-}
-
-/* Header row */
-.document-table thead {
-  background-color: var(--header-bg);
-  color: var(--header-text);
-}
-
-.document-table th {
-  text-align: left;
-  padding: 12px;
-  font-weight: 600;
-  border-bottom: 2px solid var(--border-color);
-}
-
-/* Table rows */
-.document-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-
-/* Highlighted row (optional) */
-.document-table tr.highlight {
-  background-color: var(--highlight-row) !important;
-  color: white;
-}
-
-
-/* Responsive */
+/* 🌟 Responsive Adjustments */
 @media (max-width: 768px) {
-    .patient-search-header h5 {
-        font-size: 1rem;
-    }
-
-    .patient-search-table table {
-        font-size: 0.9rem;
-    }
+  .main-heading {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .table-section table {
+    font-size: 0.85rem;
+  }
 }
